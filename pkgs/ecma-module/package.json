@@ -1,0 +1,53 @@
+{
+	"name": "@spencerbeggs/ecma-module",
+	"version": "0.1.0",
+	"description": "Example ECMA module package",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"publishConfig": {
+		"dist": "dist/dev",
+		"linkDirectory": true,
+		"access": "public",
+		"targets": [
+			{
+				"protocol": "npm",
+				"registry": "https://npm.pkg.github.com/",
+				"directory": "dist/npm",
+				"access": "public",
+				"provenance": true
+			},
+			{
+				"protocol": "npm",
+				"registry": "https://registry.npmjs.org/",
+				"directory": "dist/npm",
+				"access": "public",
+				"provenance": true
+			}
+		]
+	},
+	"scripts": {
+		"build:dev": "rslib build --env-mode dev",
+		"build:prod": "rslib build --env-mode npm",
+		"typecheck": "tsgo --noEmit"
+	},
+	"keywords": [],
+	"author": {
+		"name": "C. Spencer Beggs",
+		"email": "spencer@beggs.codes",
+		"url": "https://spencerbeg.gs"
+	},
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"@microsoft/api-extractor": "^7.55.2",
+		"@savvy-web/rslib-builder": "^0.2.0",
+		"@types/node": "^25.0.9",
+		"@typescript/native-preview": "7.0.0-dev.20260118.1",
+		"vitest": "^4.0.17"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}

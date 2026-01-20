@@ -1,0 +1,58 @@
+{
+	"$schema": "https://turborepo.com/schema.v2.json",
+	"extends": ["//"],
+	"tasks": {
+		"build:dev": {
+			"cache": true,
+			"dependsOn": ["typecheck"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yml",
+				"$TURBO_ROOT$/pnpm-workspace.yml",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json",
+				"src/**/*.ts",
+				"README.md",
+				"LICENSE"
+			],
+			"outputLogs": "errors-only",
+			"outputs": ["dist/dev/**"]
+		},
+		"build:prod": {
+			"cache": true,
+			"dependsOn": ["typecheck"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yml",
+				"$TURBO_ROOT$/pnpm-workspace.yml",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json",
+				"src/**/*.ts",
+				"README.md",
+				"LICENSE"
+			],
+			"outputLogs": "errors-only",
+			"outputs": ["dist/npm/**"]
+		},
+		"typecheck": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yml",
+				"$TURBO_ROOT$/pnpm-workspace.yml",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json",
+				"src/**/*.ts"
+			],
+			"outputLogs": "errors-only",
+			"outputs": ["tsconfig.tsbuildinfo"]
+		}
+	}
+}
