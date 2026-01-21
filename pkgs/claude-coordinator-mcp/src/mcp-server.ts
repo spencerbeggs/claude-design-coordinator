@@ -3,6 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import {
 	AnswerInputSchema,
 	AskInputSchema,
+	DEFAULT_URL,
 	GetContextInputSchema,
 	JoinInputSchema,
 	ListContextInputSchema,
@@ -12,6 +13,22 @@ import {
 import { z } from "zod";
 import type { CoordinatorClient } from "./client.js";
 import { createCoordinatorClient } from "./client.js";
+
+/**
+ * Format connection errors with helpful guidance
+ */
+function formatConnectionError(error: unknown, url: string): string {
+	const errorStr = String(error);
+	if (
+		errorStr.includes("ECONNREFUSED") ||
+		errorStr.includes("ENOTFOUND") ||
+		errorStr.includes("WebSocket") ||
+		errorStr.includes("connect")
+	) {
+		return `Could not connect to coordinator server at ${url}. Please start the server with: npx @spencerbeggs/claude-coordinator-server`;
+	}
+	return errorStr;
+}
 
 /**
  * MCP server options
@@ -24,6 +41,7 @@ export interface McpServerOptions {
  * Create and run the MCP server
  */
 export async function createMcpServer(options: McpServerOptions = {}): Promise<void> {
+	const serverUrl = options.url ?? DEFAULT_URL;
 	let client: CoordinatorClient | null = null;
 	let agentId: string | null = null;
 
@@ -35,10 +53,13 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 	// Helper to ensure client is connected
 	const getClient = (): CoordinatorClient => {
 		if (!client) {
-			client = createCoordinatorClient({ url: options.url });
+			client = createCoordinatorClient({ url: serverUrl });
 		}
 		return client;
 	};
+
+	// Helper to format errors with connection guidance
+	const formatError = (error: unknown): string => formatConnectionError(error, serverUrl);
 
 	// Helper to ensure agent is joined
 	const requireAgentId = (): string => {
@@ -67,7 +88,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 				};
 			} catch (error) {
 				return {
-					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 					isError: true,
 				};
 			}
@@ -87,7 +108,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}
@@ -102,7 +123,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}
@@ -122,7 +143,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 				};
 			} catch (error) {
 				return {
-					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 					isError: true,
 				};
 			}
@@ -138,7 +159,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}
@@ -159,7 +180,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 				};
 			} catch (error) {
 				return {
-					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 					isError: true,
 				};
 			}
@@ -176,7 +197,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}
@@ -192,7 +213,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}
@@ -213,7 +234,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 				};
 			} catch (error) {
 				return {
-					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 					isError: true,
 				};
 			}
@@ -234,7 +255,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 				};
 			} catch (error) {
 				return {
-					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+					content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 					isError: true,
 				};
 			}
@@ -250,7 +271,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 			};
 		} catch (error) {
 			return {
-				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: String(error) }) }],
+				content: [{ type: "text" as const, text: JSON.stringify({ success: false, error: formatError(error) }) }],
 				isError: true,
 			};
 		}

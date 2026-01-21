@@ -136,6 +136,21 @@ export function getOrCreateState(sessionId?: string): CoordinatorState {
 	return globalState;
 }
 
+/**
+ * Resets the global coordinator state singleton to null.
+ *
+ * @remarks
+ * Call this in test teardown (e.g., `afterEach` or `afterAll`) to ensure clean
+ * state between test suites. This prevents state from leaking across tests when
+ * using the singleton pattern.
+ *
+ * @example
+ * ```ts
+ * afterEach(() => {
+ *   resetState();
+ * });
+ * ```
+ */
 export function resetState(): void {
 	globalState = null;
 }
