@@ -7,7 +7,7 @@
 		".": "./src/index.ts"
 	},
 	"publishConfig": {
-		"dist": "dist/dev",
+		"directory": "dist/dev",
 		"linkDirectory": true,
 		"access": "public",
 		"targets": [
@@ -39,10 +39,9 @@
 		"url": "https://spencerbeg.gs"
 	},
 	"license": "MIT",
-	"dependencies": {},
 	"devDependencies": {
 		"@microsoft/api-extractor": "^7.55.2",
-		"@savvy-web/rslib-builder": "^0.2.0",
+		"@savvy-web/rslib-builder": "^0.2.1",
 		"@types/node": "^25.0.9",
 		"@typescript/native-preview": "7.0.0-dev.20260118.1",
 		"vitest": "^4.0.17"

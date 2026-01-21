@@ -34,13 +34,12 @@
 		"test:watch": "vitest --watch",
 		"typecheck": "turbo run typecheck"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.8",
 		"@commitlint/cli": "^20.3.1",
 		"@commitlint/config-conventional": "^20.3.1",
 		"@types/node": "^25.0.9",
-		"@typescript/native-preview": "7.0.0-dev.20260118.1",
+		"@typescript/native-preview": "7.0.0-dev.20260120.1",
 		"@vitest/coverage-v8": "^4.0.17",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7",
