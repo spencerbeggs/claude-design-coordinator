@@ -10,22 +10,22 @@ importers:
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.8
-        version: 2.29.8(@types/node@25.0.9)
+        version: 2.29.8(@types/node@25.0.10)
       '@commitlint/cli':
         specifier: ^20.3.1
-        version: 20.3.1(@types/node@25.0.9)(typescript@5.9.3)
+        version: 20.3.1(@types/node@25.0.10)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: ^20.3.1
         version: 20.3.1
       '@types/node':
-        specifier: ^25.0.9
-        version: 25.0.9
+        specifier: ^25.0.10
+        version: 25.0.10
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260120.1
         version: 7.0.0-dev.20260120.1
       '@vitest/coverage-v8':
         specifier: ^4.0.17
-        version: 4.0.17(vitest@4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -49,7 +49,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
       yaml:
         specifier: ^2.8.2
         version: 2.8.2
@@ -65,25 +65,28 @@ importers:
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.55.2
-        version: 7.55.2(@types/node@25.0.9)
+        version: 7.55.2(@types/node@25.0.10)
+      '@rslib/core':
+        specifier: ^0.19.2
+        version: 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
       '@savvy-web/rslib-builder':
         specifier: ^0.2.1
-        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.9)(@typescript/native-preview@7.0.0-dev.20260118.1)
+        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.10)(@typescript/native-preview@7.0.0-dev.20260118.1)
       '@types/node':
-        specifier: ^25.0.9
-        version: 25.0.9
+        specifier: ^25.0.10
+        version: 25.0.10
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260118.1
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
     publishDirectory: dist/dev
 
   pkgs/claude-coordinator-mcp:
     dependencies:
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.2
+        specifier: ^1.25.3
         version: 1.25.3(hono@4.11.4)(zod@4.3.5)
       '@spencerbeggs/claude-coordinator-core':
         specifier: workspace:*
@@ -92,13 +95,13 @@ importers:
         specifier: workspace:*
         version: link:../claude-coordinator-server/dist/dev
       '@trpc/client':
-        specifier: ^11.0.0
+        specifier: ^11.8.1
         version: 11.8.1(@trpc/server@11.8.1(typescript@5.9.3))(typescript@5.9.3)
       '@trpc/server':
-        specifier: ^11.0.0
+        specifier: ^11.8.1
         version: 11.8.1(typescript@5.9.3)
       ws:
-        specifier: ^8.18.0
+        specifier: ^8.19.0
         version: 8.19.0
       zod:
         specifier: ^4.3.5
@@ -106,22 +109,25 @@ importers:
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.55.2
-        version: 7.55.2(@types/node@25.0.9)
+        version: 7.55.2(@types/node@25.0.10)
+      '@rslib/core':
+        specifier: ^0.19.2
+        version: 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
       '@savvy-web/rslib-builder':
         specifier: ^0.2.1
-        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.9)(@typescript/native-preview@7.0.0-dev.20260118.1)
+        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.10)(@typescript/native-preview@7.0.0-dev.20260118.1)
       '@types/node':
-        specifier: ^25.0.9
-        version: 25.0.9
+        specifier: ^25.0.10
+        version: 25.0.10
       '@types/ws':
-        specifier: ^8.5.0
+        specifier: ^8.18.1
         version: 8.18.1
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260118.1
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
     publishDirectory: dist/dev
 
   pkgs/claude-coordinator-server:
@@ -130,10 +136,10 @@ importers:
         specifier: workspace:*
         version: link:../claude-coordinator-core/dist/dev
       '@trpc/server':
-        specifier: ^11.0.0
+        specifier: ^11.8.1
         version: 11.8.1(typescript@5.9.3)
       ws:
-        specifier: ^8.18.0
+        specifier: ^8.19.0
         version: 8.19.0
       zod:
         specifier: ^4.3.5
@@ -141,22 +147,25 @@ importers:
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.55.2
-        version: 7.55.2(@types/node@25.0.9)
+        version: 7.55.2(@types/node@25.0.10)
+      '@rslib/core':
+        specifier: ^0.19.2
+        version: 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
       '@savvy-web/rslib-builder':
         specifier: ^0.2.1
-        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.9)(@typescript/native-preview@7.0.0-dev.20260118.1)
+        version: 0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.10)(@typescript/native-preview@7.0.0-dev.20260118.1)
       '@types/node':
-        specifier: ^25.0.9
-        version: 25.0.9
+        specifier: ^25.0.10
+        version: 25.0.10
       '@types/ws':
-        specifier: ^8.5.0
+        specifier: ^8.18.1
         version: 8.18.1
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260118.1
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
     publishDirectory: dist/dev
 
 packages:
@@ -1001,8 +1010,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@25.0.9':
-    resolution: {integrity: sha512-/rpCXHlCWeqClNBwUhDcusJxXYDjZTyE8v5oTO7WbL8eij2nKhUeU89/6xgjU7N4/Vh3He0BtyhJdQbDyhiXAw==}
+  '@types/node@25.0.10':
+    resolution: {integrity: sha512-zWW5KPngR/yvakJgGOmZ5vTBemDoSqF3AcV/LrO5u5wTWyEAVVh+IT39G4gtyAkh3CtTZs8aX/yRM82OfzHJRg==}
 
   '@types/parse-path@7.1.0':
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
@@ -2890,7 +2899,7 @@ snapshots:
     dependencies:
       '@changesets/types': 6.1.0
 
-  '@changesets/cli@2.29.8(@types/node@25.0.9)':
+  '@changesets/cli@2.29.8(@types/node@25.0.10)':
     dependencies:
       '@changesets/apply-release-plan': 7.0.14
       '@changesets/assemble-release-plan': 6.0.9
@@ -2906,7 +2915,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.3(@types/node@25.0.9)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.10)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -3005,11 +3014,11 @@ snapshots:
       human-id: 4.1.3
       prettier: 2.8.8
 
-  '@commitlint/cli@20.3.1(@types/node@25.0.9)(typescript@5.9.3)':
+  '@commitlint/cli@20.3.1(@types/node@25.0.10)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.3.1
       '@commitlint/lint': 20.3.1
-      '@commitlint/load': 20.3.1(@types/node@25.0.9)(typescript@5.9.3)
+      '@commitlint/load': 20.3.1(@types/node@25.0.10)(typescript@5.9.3)
       '@commitlint/read': 20.3.1
       '@commitlint/types': 20.3.1
       tinyexec: 1.0.2
@@ -3056,7 +3065,7 @@ snapshots:
       '@commitlint/rules': 20.3.1
       '@commitlint/types': 20.3.1
 
-  '@commitlint/load@20.3.1(@types/node@25.0.9)(typescript@5.9.3)':
+  '@commitlint/load@20.3.1(@types/node@25.0.10)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.3.1
       '@commitlint/execute-rule': 20.0.0
@@ -3064,7 +3073,7 @@ snapshots:
       '@commitlint/types': 20.3.1
       chalk: 5.6.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@25.0.9)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@25.0.10)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3215,12 +3224,12 @@ snapshots:
     dependencies:
       hono: 4.11.4
 
-  '@inquirer/external-editor@1.0.3(@types/node@25.0.9)':
+  '@inquirer/external-editor@1.0.3(@types/node@25.0.10)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.2
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -3253,23 +3262,23 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@microsoft/api-extractor-model@7.32.2(@types/node@25.0.9)':
+  '@microsoft/api-extractor-model@7.32.2(@types/node@25.0.10)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.9)
+      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.10)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.55.2(@types/node@25.0.9)':
+  '@microsoft/api-extractor@7.55.2(@types/node@25.0.10)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.32.2(@types/node@25.0.9)
+      '@microsoft/api-extractor-model': 7.32.2(@types/node@25.0.10)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.9)
+      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.10)
       '@rushstack/rig-package': 0.6.0
-      '@rushstack/terminal': 0.19.5(@types/node@25.0.9)
-      '@rushstack/ts-command-line': 5.1.5(@types/node@25.0.9)
+      '@rushstack/terminal': 0.19.5(@types/node@25.0.10)
+      '@rushstack/ts-command-line': 5.1.5(@types/node@25.0.10)
       diff: 8.0.3
       lodash: 4.17.21
       minimatch: 10.0.3
@@ -3527,12 +3536,12 @@ snapshots:
       core-js: 3.47.0
       jiti: 2.6.1
 
-  '@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)':
+  '@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)':
     dependencies:
       '@rsbuild/core': 1.7.2
-      rsbuild-plugin-dts: 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@rsbuild/core@1.7.2)(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
+      rsbuild-plugin-dts: 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@rsbuild/core@1.7.2)(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.9)
+      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.10)
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@typescript/native-preview'
@@ -3592,7 +3601,7 @@ snapshots:
 
   '@rspack/lite-tapable@1.1.0': {}
 
-  '@rushstack/node-core-library@5.19.1(@types/node@25.0.9)':
+  '@rushstack/node-core-library@5.19.1(@types/node@25.0.10)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -3603,42 +3612,42 @@ snapshots:
       resolve: 1.22.11
       semver: 7.5.4
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
-  '@rushstack/problem-matcher@0.1.1(@types/node@25.0.9)':
+  '@rushstack/problem-matcher@0.1.1(@types/node@25.0.10)':
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
   '@rushstack/rig-package@0.6.0':
     dependencies:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.19.5(@types/node@25.0.9)':
+  '@rushstack/terminal@0.19.5(@types/node@25.0.10)':
     dependencies:
-      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.9)
-      '@rushstack/problem-matcher': 0.1.1(@types/node@25.0.9)
+      '@rushstack/node-core-library': 5.19.1(@types/node@25.0.10)
+      '@rushstack/problem-matcher': 0.1.1(@types/node@25.0.10)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
-  '@rushstack/ts-command-line@5.1.5(@types/node@25.0.9)':
+  '@rushstack/ts-command-line@5.1.5(@types/node@25.0.10)':
     dependencies:
-      '@rushstack/terminal': 0.19.5(@types/node@25.0.9)
+      '@rushstack/terminal': 0.19.5(@types/node@25.0.10)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
     transitivePeerDependencies:
       - '@types/node'
 
-  '@savvy-web/rslib-builder@0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.9)(@typescript/native-preview@7.0.0-dev.20260118.1)':
+  '@savvy-web/rslib-builder@0.2.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@pnpm/logger@1001.0.1)(@rslib/core@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3))(@types/node@25.0.10)(@typescript/native-preview@7.0.0-dev.20260118.1)':
     dependencies:
-      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.9)
+      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.10)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
       '@pnpm/exportable-manifest': 1000.3.1(@pnpm/logger@1001.0.1)
-      '@rslib/core': 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
-      '@types/node': 25.0.9
+      '@rslib/core': 0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3)
+      '@types/node': 25.0.10
       '@typescript/native-preview': 7.0.0-dev.20260118.1
       glob: 13.0.0
       picocolors: 1.1.1
@@ -3680,7 +3689,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
   '@types/debug@4.1.12':
     dependencies:
@@ -3696,7 +3705,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@25.0.9':
+  '@types/node@25.0.10':
     dependencies:
       undici-types: 7.16.0
 
@@ -3708,7 +3717,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
 
   '@typescript/native-preview-darwin-arm64@7.0.0-dev.20260118.1':
     optional: true
@@ -3772,7 +3781,7 @@ snapshots:
       '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260120.1
       '@typescript/native-preview-win32-x64': 7.0.0-dev.20260120.1
 
-  '@vitest/coverage-v8@4.0.17(vitest@4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/coverage-v8@4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.17
@@ -3784,7 +3793,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/expect@4.0.17':
     dependencies:
@@ -3795,13 +3804,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.17
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/pretty-format@4.0.17':
     dependencies:
@@ -4031,9 +4040,9 @@ snapshots:
       object-assign: 4.1.1
       vary: 1.1.2
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@25.0.9)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@25.0.10)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
       cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -5107,12 +5116,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rsbuild-plugin-dts@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.9))(@rsbuild/core@1.7.2)(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3):
+  rsbuild-plugin-dts@0.19.3(@microsoft/api-extractor@7.55.2(@types/node@25.0.10))(@rsbuild/core@1.7.2)(@typescript/native-preview@7.0.0-dev.20260118.1)(typescript@5.9.3):
     dependencies:
       '@ast-grep/napi': 0.37.0
       '@rsbuild/core': 1.7.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.9)
+      '@microsoft/api-extractor': 7.55.2(@types/node@25.0.10)
       '@typescript/native-preview': 7.0.0-dev.20260118.1
       typescript: 5.9.3
 
@@ -5364,7 +5373,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@7.3.1(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2):
+  vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       esbuild: 0.27.2
       fdir: 6.5.0(picomatch@4.0.3)
@@ -5373,15 +5382,15 @@ snapshots:
       rollup: 4.55.2
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
       fsevents: 2.3.3
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.0.17(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2):
+  vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.17
-      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.17
       '@vitest/runner': 4.0.17
       '@vitest/snapshot': 4.0.17
@@ -5398,10 +5407,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@25.0.9)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 25.0.9
+      '@types/node': 25.0.10
     transitivePeerDependencies:
       - jiti
       - less
