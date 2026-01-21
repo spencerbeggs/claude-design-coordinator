@@ -1,3 +1,7 @@
 {
-	"extends": ["@savvy-web/rslib-builder/tsconfig/ecma/lib.json"]
+	"compilerOptions": {
+		"isolatedDeclarations": false
+	},
+	"extends": ["@savvy-web/rslib-builder/tsconfig/ecma/lib.json"],
+	"references": [{ "path": "../claude-coordinator-core" }]
 }
