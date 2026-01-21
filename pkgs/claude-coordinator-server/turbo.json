@@ -2,24 +2,6 @@
 	"$schema": "https://turborepo.com/schema.v2.json",
 	"extends": ["//"],
 	"tasks": {
-		"build": {
-			"cache": true,
-			"dependsOn": ["typecheck"],
-			"inputs": [
-				"$TURBO_DEFAULT$",
-				"$TURBO_ROOT$/package.json",
-				"$TURBO_ROOT$/pnpm-lock.yml",
-				"$TURBO_ROOT$/pnpm-workspace.yml",
-				"package.json",
-				"rslib.config.ts",
-				"tsconfig.json",
-				"src/**/*.ts",
-				"README.md",
-				"LICENSE"
-			],
-			"outputLogs": "errors-only",
-			"outputs": ["dist/**", ".rslib/declarations/**"]
-		},
 		"build:dev": {
 			"cache": true,
 			"dependsOn": ["typecheck"],
@@ -58,7 +40,7 @@
 		},
 		"typecheck": {
 			"cache": true,
-			"dependsOn": ["^build"],
+			"dependsOn": ["^build:dev"],
 			"inputs": [
 				"$TURBO_DEFAULT$",
 				"$TURBO_ROOT$/package.json",

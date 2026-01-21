@@ -31,7 +31,6 @@
 		]
 	},
 	"scripts": {
-		"build": "turbo run build:dev build:prod --log-order=grouped",
 		"build:dev": "rslib build --env-mode dev",
 		"build:prod": "rslib build --env-mode npm",
 		"typecheck": "tsgo --noEmit"
