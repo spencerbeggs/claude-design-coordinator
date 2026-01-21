@@ -1,7 +1,7 @@
 {
-	"name": "@spencerbeggs/ecma-module",
+	"name": "@spencerbeggs/claude-coordinator-core",
 	"version": "0.1.0",
-	"description": "Example ECMA module package",
+	"description": "Core schemas and types for Claude Coordinator",
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts"
@@ -28,17 +28,21 @@
 		]
 	},
 	"scripts": {
+		"build": "turbo run build:dev build:prod",
 		"build:dev": "rslib build --env-mode dev",
 		"build:prod": "rslib build --env-mode npm",
 		"typecheck": "tsgo --noEmit"
 	},
-	"keywords": [],
+	"keywords": ["claude", "coordinator", "trpc", "schemas"],
 	"author": {
 		"name": "C. Spencer Beggs",
 		"email": "spencer@beggs.codes",
 		"url": "https://spencerbeg.gs"
 	},
 	"license": "MIT",
+	"dependencies": {
+		"zod": "^3.24.0"
+	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "^7.55.2",
 		"@savvy-web/rslib-builder": "^0.2.1",

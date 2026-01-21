@@ -1,0 +1,63 @@
+{
+	"name": "@spencerbeggs/claude-coordinator-mcp",
+	"version": "0.1.0",
+	"description": "MCP stdio bridge for Claude Coordinator",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"bin": {
+		"claude-coordinator-mcp": "./src/bin/cli.ts"
+	},
+	"publishConfig": {
+		"directory": "dist/dev",
+		"linkDirectory": true,
+		"access": "public",
+		"targets": [
+			{
+				"protocol": "npm",
+				"registry": "https://npm.pkg.github.com/",
+				"directory": "dist/npm",
+				"access": "public",
+				"provenance": true
+			},
+			{
+				"protocol": "npm",
+				"registry": "https://registry.npmjs.org/",
+				"directory": "dist/npm",
+				"access": "public",
+				"provenance": true
+			}
+		]
+	},
+	"scripts": {
+		"build": "turbo run build:dev build:prod",
+		"build:dev": "rslib build --env-mode dev",
+		"build:prod": "rslib build --env-mode npm",
+		"typecheck": "tsgo --noEmit"
+	},
+	"keywords": ["claude", "coordinator", "mcp", "model-context-protocol"],
+	"author": {
+		"name": "C. Spencer Beggs",
+		"email": "spencer@beggs.codes",
+		"url": "https://spencerbeg.gs"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@spencerbeggs/claude-coordinator-core": "workspace:*",
+		"@modelcontextprotocol/sdk": "^1.25.2",
+		"@trpc/client": "^11.0.0",
+		"ws": "^8.18.0"
+	},
+	"devDependencies": {
+		"@microsoft/api-extractor": "^7.55.2",
+		"@savvy-web/rslib-builder": "^0.2.1",
+		"@types/node": "^25.0.9",
+		"@types/ws": "^8.5.0",
+		"@typescript/native-preview": "7.0.0-dev.20260118.1",
+		"vitest": "^4.0.17"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}
