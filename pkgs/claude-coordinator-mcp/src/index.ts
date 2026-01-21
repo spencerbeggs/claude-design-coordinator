@@ -1,5 +1,5 @@
 /**
- * @spencerbeggs/claude-coordinator-mcp
+ * \@spencerbeggs/claude-coordinator-mcp
  *
  * MCP stdio bridge for the Claude Coordinator system.
  * Provides MCP tools that Claude Code can use to communicate

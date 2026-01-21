@@ -180,7 +180,7 @@ const decisionsRouter = t.router({
 /**
  * Main application router
  */
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: This is OK here, we need to infer the router type
 export const appRouter: typeof t.router extends (...args: any) => infer R ? R : unknown = t.router({
 	session: sessionRouter,
 	context: contextRouter,

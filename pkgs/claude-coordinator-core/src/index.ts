@@ -1,5 +1,5 @@
 /**
- * @spencerbeggs/claude-coordinator-core
+ * \@spencerbeggs/claude-coordinator-core
  *
  * Core schemas and types for the Claude Coordinator system.
  * Provides Zod schemas for validation and TypeScript types for

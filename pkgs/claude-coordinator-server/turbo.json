@@ -18,7 +18,7 @@
 				"LICENSE"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["dist/**"]
+			"outputs": ["dist/**", ".rslib/declarations/**"]
 		},
 		"build:dev": {
 			"cache": true,
@@ -36,7 +36,7 @@
 				"LICENSE"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["dist/dev/**"]
+			"outputs": ["dist/dev/**", ".rslib/declarations/dev/**"]
 		},
 		"build:prod": {
 			"cache": true,
@@ -54,7 +54,7 @@
 				"LICENSE"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["dist/npm/**"]
+			"outputs": ["dist/npm/**", ".rslib/declarations/npm/**"]
 		},
 		"typecheck": {
 			"cache": true,

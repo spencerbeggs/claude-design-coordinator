@@ -2,9 +2,21 @@
 	"$schema": "https://turborepo.com/schema.v2.json",
 	"globalPassThroughEnv": ["GITHUB_ACTIONS", "CI"],
 	"tasks": {
-		"test": {
+		"//#typecheck:all": {
+			"cache": true,
+			"dependsOn": [
+				"@spencerbeggs/claude-coordinator-core#typecheck",
+				"@spencerbeggs/claude-coordinator-mcp#typecheck",
+				"@spencerbeggs/claude-coordinator-server#typecheck"
+			],
+			"outputLogs": "full",
+			"outputs": []
+		},
+		"//#vitest:all": {
 			"cache": false,
-			"dependsOn": ["^build:dev"]
+			"dependsOn": ["typecheck:all"],
+			"outputLogs": "full",
+			"outputs": [".coverage/**"]
 		}
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * @spencerbeggs/claude-coordinator-server
+ * \@spencerbeggs/claude-coordinator-server
  *
  * tRPC WebSocket server for the Claude Coordinator system.
  * Provides real-time communication between Claude Code instances.
