@@ -15,7 +15,13 @@
 	"include": ["lib/**/*.ts", "types/**/*.d.ts"],
 	"references": [
 		{
-			"path": "./pkgs/ecma-module"
+			"path": "./pkgs/claude-coordinator-core"
+		},
+		{
+			"path": "./pkgs/claude-coordinator-server"
+		},
+		{
+			"path": "./pkgs/claude-coordinator-mcp"
 		}
 	]
 }

@@ -36,12 +36,7 @@ docs/src/**/api/**/*.md
 **/savvy.config.toml
 pkgs/generators/test.ts
 # Temporary api-extractor files created during build
-**/src/api-extractor-*.ts
-test.ts
 .claude/settings.local.json
-.claude/plans/
 **/coverage-debug
 .claude/plugins-debug.log
 .playwright-mcp
-website/lib/packages/*/*.api.json
-website/lib/packages/*/package.json

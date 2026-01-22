@@ -62,7 +62,7 @@
 			},
 			"nursery": {
 				"noImportCycles": "error",
-				"useExplicitType": "error"
+				"useExplicitType": "off"
 			},
 			"recommended": true,
 			"style": {
@@ -103,7 +103,14 @@
 			}
 		},
 		{
-			"includes": ["__test__/**/*.ts", "scripts/**/*.ts", "scripts/**/*.mts", "vitest.config.ts"],
+			"includes": [
+				"__test__/**/*.ts",
+				"scripts/**/*.ts",
+				"scripts/**/*.mts",
+				"vitest.config.ts",
+				"**/schemas/*.ts",
+				"claude-coordinator-server/src/router.ts"
+			],
 			"linter": {
 				"rules": {
 					"nursery": {

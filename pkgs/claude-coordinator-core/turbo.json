@@ -18,7 +18,7 @@
 				"LICENSE"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["dist/dev/**"]
+			"outputs": ["dist/dev/**", ".rslib/declarations/dev/**"]
 		},
 		"build:prod": {
 			"cache": true,
@@ -36,11 +36,11 @@
 				"LICENSE"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["dist/npm/**"]
+			"outputs": ["dist/npm/**", ".rslib/declarations/npm/**"]
 		},
 		"typecheck": {
 			"cache": true,
-			"dependsOn": ["^build"],
+			"dependsOn": ["^build:dev"],
 			"inputs": [
 				"$TURBO_DEFAULT$",
 				"$TURBO_ROOT$/package.json",
@@ -52,7 +52,7 @@
 				"src/**/*.ts"
 			],
 			"outputLogs": "errors-only",
-			"outputs": ["tsconfig.tsbuildinfo"]
+			"outputs": ["dist/.tsbuildinfo.lib"]
 		}
 	}
 }
