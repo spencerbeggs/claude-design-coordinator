@@ -1,6 +1,6 @@
 {
 	"name": "@spencerbeggs/claude-coordinator-server",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"description": "tRPC WebSocket server for Claude Coordinator",
 	"type": "module",
 	"exports": {
