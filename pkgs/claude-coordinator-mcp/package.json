@@ -62,7 +62,7 @@
 		"@savvy-web/rslib-builder": "^0.2.1",
 		"@types/node": "^25.0.10",
 		"@types/ws": "^8.18.1",
-		"@typescript/native-preview": "7.0.0-dev.20260118.1",
+		"@typescript/native-preview": "7.0.0-dev.20260120.1",
 		"vitest": "^4.0.17"
 	},
 	"engines": {
