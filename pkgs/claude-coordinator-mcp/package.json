@@ -42,6 +42,11 @@
 		"url": "https://spencerbeg.gs"
 	},
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/spencerbeggs/claude-design-coordinator.git",
+		"directory": "pkgs/claude-coordinator-mcp"
+	},
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "^1.25.3",
 		"@spencerbeggs/claude-coordinator-core": "workspace:*",
