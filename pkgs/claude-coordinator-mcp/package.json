@@ -48,7 +48,7 @@
 		"directory": "pkgs/claude-coordinator-mcp"
 	},
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "^1.25.3",
+		"@modelcontextprotocol/sdk": "^1.26.0",
 		"@spencerbeggs/claude-coordinator-core": "workspace:*",
 		"@spencerbeggs/claude-coordinator-server": "workspace:*",
 		"@trpc/client": "^11.8.1",
