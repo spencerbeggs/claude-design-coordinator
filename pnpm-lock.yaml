@@ -25,7 +25,7 @@ importers:
         version: 7.0.0-dev.20260120.1
       '@vitest/coverage-v8':
         specifier: ^4.0.17
-        version: 4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3))
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -49,10 +49,10 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
       yaml:
-        specifier: ^2.8.2
-        version: 2.8.2
+        specifier: ^2.8.3
+        version: 2.8.3
       yaml-lint:
         specifier: ^1.7.0
         version: 1.7.0
@@ -80,7 +80,7 @@ importers:
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
     publishDirectory: dist/dev
 
   pkgs/claude-coordinator-mcp:
@@ -127,7 +127,7 @@ importers:
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
     publishDirectory: dist/dev
 
   pkgs/claude-coordinator-server:
@@ -165,7 +165,7 @@ importers:
         version: 7.0.0-dev.20260118.1
       vitest:
         specifier: ^4.0.17
-        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
     publishDirectory: dist/dev
 
 packages:
@@ -1230,8 +1230,8 @@ packages:
     resolution: {integrity: sha512-oP5VkATKlNwcgvxi0vM0p/D3n2C3EReYVX+DNYs5TjZFn/oQt2j+4sVJtSMr18pdRr8wjTcBl6LoV+FUwzPmNA==}
     engines: {node: '>=18'}
 
-  bole@5.0.26:
-    resolution: {integrity: sha512-Psr3ttHqgOTRs3n492Ps4fsw0435ISA2OUw6ihN7qoCwSwNNcbxp61gXnCVJkLKMNCSZoKrXI/ddWKSggv2ZXw==}
+  bole@5.0.28:
+    resolution: {integrity: sha512-l+yybyZLV7zTD6EuGxoXsilpER1ctMCpdOqjSYNigJJma39ha85fzCtYccPx06oR1u7uCQLOcUAFFzvfXVBmuQ==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -2778,6 +2778,11 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
+  yaml@2.8.3:
+    resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -3400,7 +3405,7 @@ snapshots:
 
   '@pnpm/logger@1001.0.1':
     dependencies:
-      bole: 5.0.26
+      bole: 5.0.28
       split2: 4.2.0
 
   '@pnpm/manifest-utils@1002.0.4(@pnpm/logger@1001.0.1)':
@@ -3781,7 +3786,7 @@ snapshots:
       '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260120.1
       '@typescript/native-preview-win32-x64': 7.0.0-dev.20260120.1
 
-  '@vitest/coverage-v8@4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/coverage-v8@4.0.17(vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.17
@@ -3793,7 +3798,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
 
   '@vitest/expect@4.0.17':
     dependencies:
@@ -3804,13 +3809,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
       '@vitest/spy': 4.0.17
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
 
   '@vitest/pretty-format@4.0.17':
     dependencies:
@@ -3933,7 +3938,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  bole@5.0.26:
+  bole@5.0.28:
     dependencies:
       fast-safe-stringify: 2.1.1
       individual: 3.0.0
@@ -4553,7 +4558,7 @@ snapshots:
       nano-spawn: 2.0.0
       pidtree: 0.6.0
       string-argv: 0.3.2
-      yaml: 2.8.2
+      yaml: 2.8.3
 
   listr2@9.0.5:
     dependencies:
@@ -5373,7 +5378,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2):
+  vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3):
     dependencies:
       esbuild: 0.27.2
       fdir: 6.5.0(picomatch@4.0.3)
@@ -5385,12 +5390,12 @@ snapshots:
       '@types/node': 25.0.10
       fsevents: 2.3.3
       jiti: 2.6.1
-      yaml: 2.8.2
+      yaml: 2.8.3
 
-  vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2):
+  vitest@4.0.17(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3):
     dependencies:
       '@vitest/expect': 4.0.17
-      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3))
       '@vitest/pretty-format': 4.0.17
       '@vitest/runner': 4.0.17
       '@vitest/snapshot': 4.0.17
@@ -5407,7 +5412,7 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(yaml@2.8.3)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.0.10
@@ -5481,6 +5486,8 @@ snapshots:
       nconf: 0.12.1
 
   yaml@2.8.2: {}
+
+  yaml@2.8.3: {}
 
   yargs-parser@20.2.9: {}
 
