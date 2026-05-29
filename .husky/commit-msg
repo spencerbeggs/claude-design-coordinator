@@ -1,16 +1,34 @@
-#!/bin/sh
+#!/usr/bin/env sh
+# Commit-msg hook with savvy managed sections
+# Custom hooks can go above, below, or between the managed sections
 
-# Skip in CI environment
-[ -n "$GITHUB_ACTIONS" ] && exit 0
+# --- BEGIN SAVVY-BASE MANAGED SECTION ---
+ROOT=$(git rev-parse --show-toplevel)
 
-# Re-exec with zsh if not already running in zsh (for GUI git clients like GitKraken)
-if [ -z "$ZSH_VERSION" ]; then
-  exec /bin/zsh "$0" "$@"
-fi
+in_ci() { [ -n "$CI" ] || [ -n "$GITHUB_ACTIONS" ]; }
 
-# Ensure pnpm is in PATH for GUI git clients
-# Source nvm to get access to node/pnpm
-source ~/.zshenv
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+detect_pm() {
+  if [ -f "$ROOT/package.json" ]; then
+    pm=$(jq -r '.packageManager // empty' "$ROOT/package.json" 2>/dev/null | cut -d'@' -f1)
+    if [ -n "$pm" ]; then echo "$pm"; return; fi
+  fi
+  if   [ -f "$ROOT/pnpm-lock.yaml" ]; then echo "pnpm"
+  elif [ -f "$ROOT/yarn.lock" ];      then echo "yarn"
+  elif [ -f "$ROOT/bun.lock" ];       then echo "bun"
+  else echo "npm"; fi
+}
+PM=$(detect_pm)
 
-pnpm exec commitlint --config ./lib/configs/commitlint.config.ts --edit $1
+pm_exec() {
+  case "$PM" in
+    pnpm) pnpm exec "$@" ;;
+    yarn) yarn exec "$@" ;;
+    bun)  bun x "$@" ;;
+    *)    npx --no -- "$@" ;;
+  esac
+}
+# --- END SAVVY-BASE MANAGED SECTION ---
+
+# --- BEGIN SAVVY-COMMIT MANAGED SECTION ---
+in_ci || pm_exec commitlint --config "$ROOT/lib/configs/commitlint.config.ts" --edit "$1"
+# --- END SAVVY-COMMIT MANAGED SECTION ---
