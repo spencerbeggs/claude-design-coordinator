@@ -48,21 +48,21 @@
 		"directory": "pkgs/claude-coordinator-mcp"
 	},
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "^1.25.3",
+		"@modelcontextprotocol/sdk": "^1.29.0",
 		"@spencerbeggs/claude-coordinator-core": "workspace:*",
 		"@spencerbeggs/claude-coordinator-server": "workspace:*",
-		"@trpc/client": "^11.8.1",
-		"@trpc/server": "^11.8.1",
-		"ws": "^8.19.0",
-		"zod": "^4.3.5"
+		"@trpc/client": "^11.17.0",
+		"@trpc/server": "^11.17.0",
+		"ws": "^8.21.0",
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@rslib/core": "^0.19.2",
+		"@rslib/core": "^0.22.0",
 		"@savvy-web/rslib-builder": "^0.20.10",
 		"@types/node": "catalog:silk",
 		"@types/ws": "^8.18.1",
 		"@typescript/native-preview": "catalog:silk",
-		"vitest": "^4.0.17"
+		"vitest": "^4.1.7"
 	},
 	"engines": {
 		"node": ">=24.1.0"

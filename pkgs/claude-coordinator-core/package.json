@@ -45,15 +45,15 @@
 		"directory": "pkgs/claude-coordinator-core"
 	},
 	"dependencies": {
-		"zod": "^4.3.5"
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "^7.55.2",
-		"@rslib/core": "^0.19.2",
-		"@savvy-web/rslib-builder": "^0.2.1",
+		"@rslib/core": "^0.22.0",
+		"@savvy-web/rslib-builder": "^0.20.10",
 		"@types/node": "^25.0.10",
 		"@typescript/native-preview": "7.0.0-dev.20260118.1",
-		"vitest": "^4.0.17"
+		"vitest": "^4.1.7"
 	},
 	"engines": {
 		"node": ">=24.1.0"
