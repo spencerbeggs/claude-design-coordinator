@@ -224,34 +224,34 @@ I'll update this repository's API client to use GraphQL accordingly.
 
 Once configured, Claude Code has access to these tools:
 
-| Tool                           | Description                            |
-| ------------------------------ | -------------------------------------- |
-| `coordinator_join`             | Join a session as source or target     |
-| `coordinator_leave`            | Leave the current session              |
-| `coordinator_list_agents`      | See who's connected                    |
-| `coordinator_share_context`    | Share knowledge with key, value, tags  |
-| `coordinator_get_context`      | Retrieve specific context by key       |
-| `coordinator_list_context`     | List all shared context                |
-| `coordinator_ask`              | Ask a question to other agents         |
-| `coordinator_answer`           | Answer a pending question              |
-| `coordinator_pending_questions`| Check for unanswered questions         |
-| `coordinator_log_decision`     | Record a decision with rationale       |
-| `coordinator_list_decisions`   | View all logged decisions              |
+| Tool | Description |
+| --- | --- |
+| `coordinator_join` | Join a session as source or target |
+| `coordinator_leave` | Leave the current session |
+| `coordinator_list_agents` | See who's connected |
+| `coordinator_share_context` | Share knowledge with key, value, tags |
+| `coordinator_get_context` | Retrieve specific context by key |
+| `coordinator_list_context` | List all shared context |
+| `coordinator_ask` | Ask a question to other agents |
+| `coordinator_answer` | Answer a pending question |
+| `coordinator_pending_questions` | Check for unanswered questions |
+| `coordinator_log_decision` | Record a decision with rationale |
+| `coordinator_list_decisions` | View all logged decisions |
 
 ## Configuration
 
 ### Server Environment Variables
 
-| Variable | Default     | Description           |
-| -------- | ----------- | --------------------- |
-| `PORT`   | `3030`      | WebSocket server port |
-| `HOST`   | `localhost` | Server bind address   |
+| Variable | Default | Description |
+| --- | --- | --- |
+| `PORT` | `3030` | WebSocket server port |
+| `HOST` | `localhost` | Server bind address |
 
 ### MCP Command Line Arguments
 
-| Argument | Default                | Description              |
-| -------- | ---------------------- | ------------------------ |
-| `--url`  | `ws://localhost:3030`  | Coordinator server URL   |
+| Argument | Default | Description |
+| --- | --- | --- |
+| `--url` | `ws://localhost:3030` | Coordinator server URL |
 
 ## Contributing
 
