@@ -32,8 +32,8 @@
 		"test": "turbo run //#vitest:all --log-prefix=none --log-order=grouped",
 		"test:coverage": "vitest run --coverage",
 		"test:watch": "vitest --watch",
-		"typecheck": "turbo run //#typecheck:all --log-prefix=none --log-order=grouped",
-		"typecheck:all": "echo 'Running all typechecks...'",
+		"typecheck": "turbo run types:check --log-prefix=none --log-order=grouped",
+		"types:check": "tsgo --noEmit",
 		"vitest:all": "vitest --run"
 	},
 	"devDependencies": {

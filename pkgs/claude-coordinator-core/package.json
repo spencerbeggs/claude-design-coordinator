@@ -2,14 +2,45 @@
 	"name": "@spencerbeggs/claude-coordinator-core",
 	"version": "0.1.0",
 	"description": "Core schemas and types for Claude Coordinator",
+	"keywords": ["claude", "coordinator", "trpc", "schemas"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/spencerbeggs/claude-design-coordinator.git",
+		"directory": "pkgs/claude-coordinator-core"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "C. Spencer Beggs",
+		"email": "spencer@beggs.codes",
+		"url": "https://spencerbeg.gs"
+	},
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts"
 	},
+	"scripts": {
+		"build:dev": "rslib build --env-mode dev",
+		"build:prod": "rslib build --env-mode npm",
+		"types:check": "tsgo --noEmit"
+	},
+	"dependencies": {
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@rslib/core": "^0.21.0",
+		"@savvy-web/rslib-builder": "^0.20.10",
+		"@types/node": "catalog:silk",
+		"@typescript/native-preview": "catalog:silk",
+		"typescript": "catalog:silk",
+		"vitest": "^4.1.7"
+	},
+	"engines": {
+		"node": ">=24.1.0"
+	},
 	"publishConfig": {
+		"access": "public",
 		"directory": "dist/dev",
 		"linkDirectory": true,
-		"access": "public",
 		"targets": [
 			{
 				"protocol": "npm",
@@ -26,36 +57,5 @@
 				"provenance": true
 			}
 		]
-	},
-	"scripts": {
-		"build:dev": "rslib build --env-mode dev",
-		"build:prod": "rslib build --env-mode npm",
-		"typecheck": "tsgo --noEmit"
-	},
-	"keywords": ["claude", "coordinator", "trpc", "schemas"],
-	"author": {
-		"name": "C. Spencer Beggs",
-		"email": "spencer@beggs.codes",
-		"url": "https://spencerbeg.gs"
-	},
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/spencerbeggs/claude-design-coordinator.git",
-		"directory": "pkgs/claude-coordinator-core"
-	},
-	"dependencies": {
-		"zod": "^4.4.3"
-	},
-	"devDependencies": {
-		"@microsoft/api-extractor": "^7.55.2",
-		"@rslib/core": "^0.22.0",
-		"@savvy-web/rslib-builder": "^0.20.10",
-		"@types/node": "^25.0.10",
-		"@typescript/native-preview": "7.0.0-dev.20260118.1",
-		"vitest": "^4.1.7"
-	},
-	"engines": {
-		"node": ">=24.1.0"
 	}
 }

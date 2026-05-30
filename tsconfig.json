@@ -12,16 +12,5 @@
 		"target": "es2023"
 	},
 	"exclude": ["node_modules", "dist"],
-	"include": ["lib/**/*.ts", "types/**/*.d.ts"],
-	"references": [
-		{
-			"path": "./pkgs/claude-coordinator-core"
-		},
-		{
-			"path": "./pkgs/claude-coordinator-server"
-		},
-		{
-			"path": "./pkgs/claude-coordinator-mcp"
-		}
-	]
+	"include": ["lib/**/*.ts", "types/**/*.d.ts"]
 }

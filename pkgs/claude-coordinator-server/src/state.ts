@@ -1,5 +1,5 @@
 import { EventEmitter } from "node:events";
-import type { Agent, ContextEntry, Decision, Question } from "@spencerbeggs/claude-coordinator-core";
+import type { Agent, ContextEntry, Decision, ListContextInput, Question } from "@spencerbeggs/claude-coordinator-core";
 
 /**
  * Events emitted by the coordinator state
@@ -62,7 +62,7 @@ export class CoordinatorState extends EventEmitter<CoordinatorStateEvents> {
 		return this.context.get(key);
 	}
 
-	listContext(filters?: { tags?: string[]; createdBy?: string }): ContextEntry[] {
+	listContext(filters?: ListContextInput): ContextEntry[] {
 		let entries = Array.from(this.context.values());
 
 		const filterTags = filters?.tags;

@@ -2,6 +2,18 @@
 	"name": "@spencerbeggs/claude-coordinator-server",
 	"version": "0.1.0",
 	"description": "tRPC WebSocket server for Claude Coordinator",
+	"keywords": ["claude", "coordinator", "trpc", "websocket", "server"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/spencerbeggs/claude-design-coordinator.git",
+		"directory": "pkgs/claude-coordinator-server"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "C. Spencer Beggs",
+		"email": "spencer@beggs.codes",
+		"url": "https://spencerbeg.gs"
+	},
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts"
@@ -9,10 +21,33 @@
 	"bin": {
 		"claude-coordinator-server": "./src/bin/cli.ts"
 	},
+	"scripts": {
+		"build:dev": "rslib build --env-mode dev",
+		"build:prod": "rslib build --env-mode npm",
+		"types:check": "tsgo --noEmit"
+	},
+	"dependencies": {
+		"@spencerbeggs/claude-coordinator-core": "workspace:*",
+		"@trpc/server": "^11.17.0",
+		"ws": "^8.21.0",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@rslib/core": "^0.21.0",
+		"@savvy-web/rslib-builder": "^0.20.10",
+		"@types/node": "catalog:silk",
+		"@types/ws": "^8.18.1",
+		"@typescript/native-preview": "catalog:silk",
+		"typescript": "catalog:silk",
+		"vitest": "^4.1.7"
+	},
+	"engines": {
+		"node": ">=24.1.0"
+	},
 	"publishConfig": {
+		"access": "public",
 		"directory": "dist/dev",
 		"linkDirectory": true,
-		"access": "public",
 		"targets": [
 			{
 				"protocol": "npm",
@@ -29,39 +64,5 @@
 				"provenance": true
 			}
 		]
-	},
-	"scripts": {
-		"build:dev": "rslib build --env-mode dev",
-		"build:prod": "rslib build --env-mode npm",
-		"typecheck": "tsgo --noEmit"
-	},
-	"keywords": ["claude", "coordinator", "trpc", "websocket", "server"],
-	"author": {
-		"name": "C. Spencer Beggs",
-		"email": "spencer@beggs.codes",
-		"url": "https://spencerbeg.gs"
-	},
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/spencerbeggs/claude-design-coordinator.git",
-		"directory": "pkgs/claude-coordinator-server"
-	},
-	"dependencies": {
-		"@spencerbeggs/claude-coordinator-core": "workspace:*",
-		"@trpc/server": "^11.17.0",
-		"ws": "^8.21.0",
-		"zod": "^4.4.3"
-	},
-	"devDependencies": {
-		"@rslib/core": "^0.22.0",
-		"@savvy-web/rslib-builder": "^0.20.10",
-		"@types/node": "catalog:silk",
-		"@types/ws": "^8.18.1",
-		"@typescript/native-preview": "catalog:silk",
-		"vitest": "^4.1.7"
-	},
-	"engines": {
-		"node": ">=24.1.0"
 	}
 }

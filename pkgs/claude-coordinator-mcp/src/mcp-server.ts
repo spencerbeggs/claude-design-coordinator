@@ -31,6 +31,27 @@ function formatConnectionError(error: unknown, url: string): string {
 }
 
 /**
+ * Maps each `prop: T | undefined` member to an exact-optional `prop?: T`,
+ * leaving genuinely required members untouched.
+ */
+type ExactOptional<T> = {
+	[K in keyof T as undefined extends T[K] ? never : K]: T[K];
+} & {
+	[K in keyof T as undefined extends T[K] ? K : never]?: Exclude<T[K], undefined>;
+};
+
+/**
+ * Bridge the MCP SDK's tool-argument typing (optional fields surface as
+ * required `prop: T | undefined`) to the tRPC input typing (`prop?: T`).
+ * Under `exactOptionalPropertyTypes` the two are incompatible, so we drop
+ * undefined-valued keys — an absent optional and an `undefined` optional are
+ * equivalent for these schemas — and re-type the result to match.
+ */
+function exactOptional<T extends object>(value: T): ExactOptional<T> {
+	return Object.fromEntries(Object.entries(value).filter(([, v]) => v !== undefined)) as ExactOptional<T>;
+}
+
+/**
  * MCP server options
  */
 export interface McpServerOptions {
@@ -137,7 +158,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 		async (params) => {
 			try {
 				const id = requireAgentId();
-				const entry = await getClient().trpc.context.share.mutate({ ...params, agentId: id });
+				const entry = await getClient().trpc.context.share.mutate(exactOptional({ ...params, agentId: id }));
 				return {
 					content: [{ type: "text" as const, text: JSON.stringify({ success: true, entry }) }],
 				};
@@ -174,7 +195,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 		},
 		async (params) => {
 			try {
-				const entries = await getClient().trpc.context.list.query(params);
+				const entries = await getClient().trpc.context.list.query(exactOptional(params));
 				return {
 					content: [{ type: "text" as const, text: JSON.stringify({ success: true, entries }) }],
 				};
@@ -191,7 +212,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 	server.tool("coordinator_ask", "Ask a question to other agents", AskInputSchema.shape, async (params) => {
 		try {
 			const id = requireAgentId();
-			const question = await getClient().trpc.questions.ask.mutate({ ...params, agentId: id });
+			const question = await getClient().trpc.questions.ask.mutate(exactOptional({ ...params, agentId: id }));
 			return {
 				content: [{ type: "text" as const, text: JSON.stringify({ success: true, question }) }],
 			};
@@ -228,7 +249,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 		},
 		async (params) => {
 			try {
-				const questions = await getClient().trpc.questions.listPending.query(params);
+				const questions = await getClient().trpc.questions.listPending.query(exactOptional(params));
 				return {
 					content: [{ type: "text" as const, text: JSON.stringify({ success: true, questions }) }],
 				};
@@ -249,7 +270,7 @@ export async function createMcpServer(options: McpServerOptions = {}): Promise<v
 		async (params) => {
 			try {
 				const id = requireAgentId();
-				const decision = await getClient().trpc.decisions.log.mutate({ ...params, agentId: id });
+				const decision = await getClient().trpc.decisions.log.mutate(exactOptional({ ...params, agentId: id }));
 				return {
 					content: [{ type: "text" as const, text: JSON.stringify({ success: true, decision }) }],
 				};

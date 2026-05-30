@@ -2,21 +2,64 @@
 	"$schema": "https://turborepo.com/schema.v2.json",
 	"globalPassThroughEnv": ["GITHUB_ACTIONS", "CI"],
 	"tasks": {
-		"//#typecheck:all": {
+		"build:dev": {
 			"cache": true,
-			"dependsOn": [
-				"@spencerbeggs/claude-coordinator-core#typecheck",
-				"@spencerbeggs/claude-coordinator-mcp#typecheck",
-				"@spencerbeggs/claude-coordinator-server#typecheck"
+			"dependsOn": ["^build:dev"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yaml",
+				"$TURBO_ROOT$/pnpm-workspace.yaml",
+				"$TURBO_ROOT$/vitest.*.ts",
+				"$TURBO_ROOT$/lib/**",
+				"src/**",
+				"lib/**",
+				"!__test__/**",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json"
 			],
 			"outputLogs": "full",
-			"outputs": []
+			"outputs": ["dist/dev/**", ".rslib/declarations/dev/**"]
 		},
-		"//#vitest:all": {
-			"cache": false,
-			"dependsOn": ["typecheck:all"],
+		"build:prod": {
+			"cache": true,
+			"dependsOn": ["^build:prod"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yaml",
+				"$TURBO_ROOT$/pnpm-workspace.yaml",
+				"$TURBO_ROOT$/vitest.*.ts",
+				"$TURBO_ROOT$/lib/**",
+				"src/**",
+				"lib/**",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json"
+			],
 			"outputLogs": "full",
-			"outputs": [".coverage/**"]
+			"outputs": ["dist/npm/**", ".rslib/declarations/npm/**"]
+		},
+		"types:check": {
+			"cache": true,
+			"dependsOn": ["^build:dev"],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				"$TURBO_ROOT$/package.json",
+				"$TURBO_ROOT$/pnpm-lock.yaml",
+				"$TURBO_ROOT$/pnpm-workspace.yaml",
+				"$TURBO_ROOT$/vitest.*.ts",
+				"$TURBO_ROOT$/lib/**",
+				"__test__/**",
+				"src/**",
+				"lib/**",
+				"package.json",
+				"rslib.config.ts",
+				"tsconfig.json"
+			],
+			"outputLogs": "full",
+			"outputs": ["dist/.tsbuildinfo.lib"]
 		}
 	}
 }
