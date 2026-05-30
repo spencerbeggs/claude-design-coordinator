@@ -1,5 +1,5 @@
 {
-	"$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/v0.19.1/schema/markdownlint-cli2-config-schema.json",
+	"$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/v0.22.0/schema/markdownlint-cli2-config-schema.json",
 	"globs": ["**/*.{md,mdx}"],
 	"fix": true,
 	"gitignore": true,
@@ -13,6 +13,7 @@
 		"**/CHANGELOG.md",
 		"**/.claude/plans"
 	],
+	"customRules": ["@savvy-web/changesets/markdownlint"],
 	"config": {
 		"default": true,
 		"MD001": true,
@@ -38,7 +39,9 @@
 		"MD021": true,
 		"MD022": true,
 		"MD023": true,
-		"MD024": true,
+		"MD024": {
+			"siblings_only": true
+		},
 		"MD025": true,
 		"MD026": true,
 		"MD027": true,
@@ -47,7 +50,9 @@
 		"MD030": true,
 		"MD031": true,
 		"MD032": true,
-		"MD033": true,
+		"MD033": {
+			"allowed_elements": ["br", "details", "summary", "img", "sup", "sub"]
+		},
 		"MD034": true,
 		"MD035": true,
 		"MD036": true,
@@ -57,8 +62,8 @@
 		"MD040": true,
 		"MD041": true,
 		"MD042": true,
-		"MD043": true,
-		"MD044": true,
+		"MD043": false,
+		"MD044": false,
 		"MD045": true,
 		"MD046": true,
 		"MD047": true,
@@ -73,6 +78,14 @@
 		"MD056": true,
 		"MD057": true,
 		"MD058": true,
-		"MD059": true
+		"MD059": true,
+		"MD060": {
+			"style": "compact"
+		},
+		"changeset-heading-hierarchy": false,
+		"changeset-required-sections": false,
+		"changeset-content-structure": false,
+		"changeset-uncategorized-content": false,
+		"changeset-dependency-table-format": false
 	}
 }
