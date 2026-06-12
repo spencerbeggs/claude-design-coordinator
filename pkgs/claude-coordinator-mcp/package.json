@@ -14,6 +14,7 @@
 		"email": "spencer@beggs.codes",
 		"url": "https://spencerbeg.gs"
 	},
+	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts"
@@ -22,8 +23,10 @@
 		"claude-coordinator-mcp": "./src/bin/cli.ts"
 	},
 	"scripts": {
-		"build:dev": "rslib build --env-mode dev",
-		"build:prod": "rslib build --env-mode npm",
+		"build:dev": "node savvy.build.ts --target dev",
+		"build:meta": "node savvy.build.ts --target meta",
+		"build:prod": "node savvy.build.ts --target prod",
+		"prepare": "node savvy.build.ts --target dev",
 		"types:check": "tsgo --noEmit"
 	},
 	"dependencies": {
@@ -36,8 +39,7 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@rslib/core": "^0.22.0",
-		"@savvy-web/rslib-builder": "^0.21.3",
+		"@savvy-web/bundler": "^0.4.0",
 		"@types/node": "catalog:silk",
 		"@types/ws": "^8.18.1",
 		"@typescript/native-preview": "catalog:silk",
@@ -45,27 +47,15 @@
 		"vitest": "^4.1.7"
 	},
 	"engines": {
-		"node": ">=24.1.0"
+		"node": ">=24.11.0"
 	},
 	"publishConfig": {
 		"access": "public",
-		"directory": "dist/dev",
+		"directory": "dist/dev/pkg",
 		"linkDirectory": true,
-		"targets": [
-			{
-				"protocol": "npm",
-				"registry": "https://npm.pkg.github.com/",
-				"directory": "dist/npm",
-				"access": "public",
-				"provenance": true
-			},
-			{
-				"protocol": "npm",
-				"registry": "https://registry.npmjs.org/",
-				"directory": "dist/npm",
-				"access": "public",
-				"provenance": true
-			}
-		]
+		"targets": {
+			"npm": true,
+			"github": true
+		}
 	}
 }
