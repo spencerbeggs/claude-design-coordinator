@@ -31,17 +31,17 @@
 	},
 	"dependencies": {
 		"@spencerbeggs/claude-coordinator-core": "workspace:*",
-		"@trpc/server": "^11.17.0",
+		"@trpc/server": "^11.18.0",
 		"ws": "^8.21.0",
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^0.4.2",
+		"@savvy-web/bundler": "^0.6.0",
 		"@types/node": "catalog:silk",
 		"@types/ws": "^8.18.1",
 		"@typescript/native-preview": "catalog:silk",
 		"typescript": "catalog:silk",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	},
 	"engines": {
 		"node": ">=24.11.0"
