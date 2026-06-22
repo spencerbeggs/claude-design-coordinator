@@ -29,7 +29,7 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^0.6.0",
+		"@savvy-web/bundler": "^0.8.0",
 		"@types/node": "catalog:silk",
 		"@typescript/native-preview": "catalog:silk",
 		"typescript": "catalog:silk",
