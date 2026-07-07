@@ -29,11 +29,11 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^1.1.6",
+		"@savvy-web/bundler": "^1.1.8",
 		"@types/node": "catalog:silk",
 		"@typescript/native-preview": "catalog:silk",
 		"typescript": "catalog:silk",
-		"vitest": "^4.1.9"
+		"vitest": "^4.1.10"
 	},
 	"engines": {
 		"node": ">=24.1.0"
