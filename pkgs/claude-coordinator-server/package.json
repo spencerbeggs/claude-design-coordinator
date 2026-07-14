@@ -35,7 +35,7 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^1.1.12",
+		"@savvy-web/bundler": "^1.1.13",
 		"@types/node": "catalog:silk",
 		"@types/ws": "^8.18.1",
 		"typescript": "catalog:silk",
