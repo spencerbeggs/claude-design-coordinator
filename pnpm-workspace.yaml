@@ -2,7 +2,7 @@ packages:
   - pkgs/*
 autoInstallPeers: true
 configDependencies:
-  "@savvy-web/pnpm-plugin-silk": 0.23.1+sha512-Iv0lXkpG6NXcNu/khNeaNfpcI8KMnyOnmiB+BbwCw1t0csCZPzLf7EJ4zCuvD/yg1oyHquMXzBQHAzyGq+CnZw==
+  "@savvy-web/pnpm-plugin-silk": 0.24.0+sha512-LY3sAPflSXnyTKL9etuzeU9h8pjBXm9ML6HcIDNwschvJs1pzHOyhxK1M9FydC1a0oS+zQqsLsBwZdzbXr8ZMA==
 loglevel: info
 minimumReleaseAgeExclude:
   - "@vitest/expect@4.1.10"
@@ -13,3 +13,4 @@ minimumReleaseAgeExclude:
   - "@vitest/spy@4.1.10"
   - "@vitest/utils@4.1.10"
   - vitest@4.1.10
+  - ws@8.21.1

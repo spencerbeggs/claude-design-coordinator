@@ -34,11 +34,11 @@
 		"@spencerbeggs/claude-coordinator-server": "workspace:*",
 		"@trpc/client": "^11.18.0",
 		"@trpc/server": "^11.18.0",
-		"ws": "^8.21.0",
+		"ws": "^8.21.1",
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^1.1.13",
+		"@savvy-web/bundler": "^1.1.14",
 		"@types/node": "catalog:silk",
 		"@types/ws": "^8.18.1",
 		"typescript": "catalog:silk",
