@@ -29,13 +29,13 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^2.0.7",
+		"@savvy-web/bundler": "^2.0.8",
 		"@types/node": "catalog:silk",
 		"typescript": "catalog:silk",
-		"vitest": "^4.1.10"
+		"vitest": "catalog:silk"
 	},
 	"engines": {
-		"node": ">=24.1.0"
+		"node": ">=24.11.0"
 	},
 	"publishConfig": {
 		"access": "public",
