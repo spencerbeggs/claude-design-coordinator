@@ -1,5 +1,21 @@
 # @spencerbeggs/claude-coordinator-mcp
 
+## 0.1.2
+
+### Dependencies
+
+| Dependency                              | Type       | Action  | From  | To    |
+| --------------------------------------- | ---------- | ------- | ----- | ----- |
+| @spencerbeggs/claude-coordinator-server | dependency | updated | 0.1.1 | 0.1.2 |
+
+* | Dependency | Type       | Action  | From    | To      |                                                                          |
+  | ---------- | ---------- | ------- | ------- | ------- | ------------------------------------------------------------------------ |
+  | ws         | dependency | updated | ^8.21.0 | ^8.21.1 | [#57][#57] Thanks [@spencerbeggs](https://github.com/apps/spencerbeggs)! |
+
+### Patch Changes
+
+[#57]: https://github.com/spencerbeggs/claude-design-coordinator/pull/57
+
 ## 0.1.1
 
 ### Dependencies
