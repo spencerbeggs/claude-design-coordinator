@@ -53,6 +53,8 @@ function exactOptional<T extends object>(value: T): ExactOptional<T> {
 
 /**
  * MCP server options
+ *
+ * @public
  */
 export interface McpServerOptions {
 	url?: string;
@@ -60,6 +62,8 @@ export interface McpServerOptions {
 
 /**
  * Create and run the MCP server
+ *
+ * @public
  */
 export async function createMcpServer(options: McpServerOptions = {}): Promise<void> {
 	const serverUrl = options.url ?? DEFAULT_URL;

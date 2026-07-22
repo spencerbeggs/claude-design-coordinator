@@ -9,7 +9,12 @@
  */
 
 // Client
-export { type ClientOptions, type CoordinatorClient, createCoordinatorClient } from "./client.js";
+export {
+	type ClientOptions,
+	type CoordinatorClient,
+	type TypedTRPCClient,
+	createCoordinatorClient,
+} from "./client.js";
 
 // MCP Server
 export { type McpServerOptions, createMcpServer } from "./mcp-server.js";

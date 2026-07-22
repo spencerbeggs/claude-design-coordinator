@@ -12,6 +12,8 @@ import WebSocket from "ws";
 
 /**
  * Options for creating the coordinator client
+ *
+ * @public
  */
 export interface ClientOptions {
 	url?: string;
@@ -20,6 +22,8 @@ export interface ClientOptions {
 /**
  * Typed tRPC client interface matching the coordinator server's router
  * This provides type safety without requiring cross-package type inference
+ *
+ * @public
  */
 export interface TypedTRPCClient {
 	session: {
@@ -67,6 +71,8 @@ export interface TypedTRPCClient {
 
 /**
  * Coordinator client instance
+ *
+ * @public
  */
 export interface CoordinatorClient {
 	trpc: TypedTRPCClient;
@@ -75,6 +81,8 @@ export interface CoordinatorClient {
 
 /**
  * Create a tRPC client that connects to the coordinator server
+ *
+ * @public
  */
 export function createCoordinatorClient(options: ClientOptions = {}): CoordinatorClient {
 	const url = options.url ?? DEFAULT_URL;

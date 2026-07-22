@@ -17,14 +17,24 @@ import { getOrCreateState } from "./state.js";
 
 /**
  * Context passed to each tRPC procedure
+ *
+ * @public
  */
 export interface Context {
 	state: CoordinatorState;
 	agentId?: string;
 }
 
-// Initialize tRPC with context
-const t = initTRPC.context<Context>().create();
+/**
+ * The tRPC builder instance, scoped to {@link Context}.
+ *
+ * @remarks
+ * Exported so that {@link AppRouter}'s inferred type can be named without an
+ * unresolved reference; not intended as a stable extension point.
+ *
+ * @public
+ */
+export const t = initTRPC.context<Context>().create();
 
 const publicProcedure = t.procedure;
 
@@ -179,6 +189,8 @@ const decisionsRouter = t.router({
 
 /**
  * Main application router
+ *
+ * @public
  */
 // biome-ignore lint/suspicious/noExplicitAny: This is OK here, we need to infer the router type
 export const appRouter: typeof t.router extends (...args: any) => infer R ? R : unknown = t.router({
@@ -190,6 +202,8 @@ export const appRouter: typeof t.router extends (...args: any) => infer R ? R : 
 
 /**
  * Type exports for clients
+ *
+ * @public
  */
 export type AppRouter = typeof appRouter;
 export type RouterInputs = inferRouterInputs<AppRouter>;
@@ -197,6 +211,8 @@ export type RouterOutputs = inferRouterOutputs<AppRouter>;
 
 /**
  * Create context for a request
+ *
+ * @public
  */
 export function createContext(): Context {
 	return {

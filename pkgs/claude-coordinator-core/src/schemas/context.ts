@@ -2,6 +2,8 @@ import { z } from "zod";
 
 /**
  * Schema for a shared context entry
+ *
+ * @public
  */
 export const ContextEntrySchema = z
 	.object({
@@ -15,10 +17,17 @@ export const ContextEntrySchema = z
 	})
 	.describe("A shared context entry");
 
+/**
+ * A shared context entry
+ *
+ * @public
+ */
 export type ContextEntry = z.infer<typeof ContextEntrySchema>;
 
 /**
  * Input schema for sharing a context entry
+ *
+ * @public
  */
 export const ShareContextInputSchema = z
 	.object({
@@ -28,10 +37,17 @@ export const ShareContextInputSchema = z
 	})
 	.describe("Input for sharing a context entry");
 
+/**
+ * Input for sharing a context entry
+ *
+ * @public
+ */
 export type ShareContextInput = z.infer<typeof ShareContextInputSchema>;
 
 /**
  * Input schema for retrieving a context entry by key
+ *
+ * @public
  */
 export const GetContextInputSchema = z
 	.object({
@@ -39,10 +55,17 @@ export const GetContextInputSchema = z
 	})
 	.describe("Input for retrieving a context entry by key");
 
+/**
+ * Input for retrieving a context entry by key
+ *
+ * @public
+ */
 export type GetContextInput = z.infer<typeof GetContextInputSchema>;
 
 /**
  * Input schema for listing context entries with optional filters
+ *
+ * @public
  */
 export const ListContextInputSchema = z
 	.object({
@@ -51,4 +74,9 @@ export const ListContextInputSchema = z
 	})
 	.describe("Input for listing context entries with optional filters");
 
+/**
+ * Input for listing context entries with optional filters
+ *
+ * @public
+ */
 export type ListContextInput = z.infer<typeof ListContextInputSchema>;

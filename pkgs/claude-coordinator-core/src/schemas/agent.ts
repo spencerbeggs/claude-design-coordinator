@@ -2,15 +2,24 @@ import { z } from "zod";
 
 /**
  * Role of an agent in the coordination session
+ *
+ * @public
  */
 export const AgentRoleSchema = z
 	.enum(["source", "target"])
 	.describe("The role of the agent: 'source' provides knowledge, 'target' receives knowledge");
 
+/**
+ * Role of an agent in the coordination session
+ *
+ * @public
+ */
 export type AgentRole = z.infer<typeof AgentRoleSchema>;
 
 /**
  * Schema for a connected agent in the coordination session
+ *
+ * @public
  */
 export const AgentSchema = z
 	.object({
@@ -22,10 +31,17 @@ export const AgentSchema = z
 	})
 	.describe("A connected agent in the coordination session");
 
+/**
+ * A connected agent in the coordination session
+ *
+ * @public
+ */
 export type Agent = z.infer<typeof AgentSchema>;
 
 /**
  * Input schema for joining a coordination session
+ *
+ * @public
  */
 export const JoinInputSchema = z
 	.object({
@@ -35,10 +51,17 @@ export const JoinInputSchema = z
 	})
 	.describe("Input for joining a coordination session");
 
+/**
+ * Input for joining a coordination session
+ *
+ * @public
+ */
 export type JoinInput = z.infer<typeof JoinInputSchema>;
 
 /**
  * Result of joining a coordination session
+ *
+ * @public
  */
 export const JoinResultSchema = z
 	.object({
@@ -47,4 +70,9 @@ export const JoinResultSchema = z
 	})
 	.describe("Result of joining a coordination session");
 
+/**
+ * Result of joining a coordination session
+ *
+ * @public
+ */
 export type JoinResult = z.infer<typeof JoinResultSchema>;

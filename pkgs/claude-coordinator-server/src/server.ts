@@ -4,6 +4,8 @@ import { appRouter, createContext } from "./router.js";
 
 /**
  * Options for creating the coordinator server
+ *
+ * @public
  */
 export interface ServerOptions {
 	port?: number;
@@ -12,6 +14,8 @@ export interface ServerOptions {
 
 /**
  * Server instance with cleanup method
+ *
+ * @public
  */
 export interface CoordinatorServer {
 	wss: WebSocketServer;
@@ -20,6 +24,8 @@ export interface CoordinatorServer {
 
 /**
  * Create and start the coordinator WebSocket server
+ *
+ * @public
  */
 export function createServer(options: ServerOptions = {}): CoordinatorServer {
 	const port = options.port ?? 3030;

@@ -8,7 +8,7 @@
  */
 
 // Router
-export { type AppRouter, type Context, appRouter, createContext } from "./router.js";
+export { type AppRouter, type Context, appRouter, createContext, t } from "./router.js";
 // Server
 export { type CoordinatorServer, type ServerOptions, createServer } from "./server.js";
 

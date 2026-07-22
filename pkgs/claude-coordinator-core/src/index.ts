@@ -50,6 +50,24 @@ export {
 } from "./schemas/question.js";
 
 // Constants
+
+/**
+ * Default port for the coordinator WebSocket server
+ *
+ * @public
+ */
 export const DEFAULT_PORT: number = 3030;
+
+/**
+ * Default host for the coordinator WebSocket server
+ *
+ * @public
+ */
 export const DEFAULT_HOST: string = "localhost";
+
+/**
+ * Default WebSocket URL for the coordinator server
+ *
+ * @public
+ */
 export const DEFAULT_URL: string = `ws://${DEFAULT_HOST}:${DEFAULT_PORT}`;

@@ -2,13 +2,22 @@ import { z } from "zod";
 
 /**
  * Status of a question
+ *
+ * @public
  */
 export const QuestionStatusSchema = z.enum(["pending", "answered"]).describe("Status of the question");
 
+/**
+ * Status of a question
+ *
+ * @public
+ */
 export type QuestionStatus = z.infer<typeof QuestionStatusSchema>;
 
 /**
  * Schema for a question between agents
+ *
+ * @public
  */
 export const QuestionSchema = z
 	.object({
@@ -24,10 +33,17 @@ export const QuestionSchema = z
 	})
 	.describe("A question between agents");
 
+/**
+ * A question between agents
+ *
+ * @public
+ */
 export type Question = z.infer<typeof QuestionSchema>;
 
 /**
  * Input schema for asking a question
+ *
+ * @public
  */
 export const AskInputSchema = z
 	.object({
@@ -36,10 +52,17 @@ export const AskInputSchema = z
 	})
 	.describe("Input for asking a question");
 
+/**
+ * Input for asking a question
+ *
+ * @public
+ */
 export type AskInput = z.infer<typeof AskInputSchema>;
 
 /**
  * Input schema for answering a question
+ *
+ * @public
  */
 export const AnswerInputSchema = z
 	.object({
@@ -48,10 +71,17 @@ export const AnswerInputSchema = z
 	})
 	.describe("Input for answering a question");
 
+/**
+ * Input for answering a question
+ *
+ * @public
+ */
 export type AnswerInput = z.infer<typeof AnswerInputSchema>;
 
 /**
  * Event emitted when a question is asked
+ *
+ * @public
  */
 export const QuestionEventSchema = z
 	.object({
@@ -60,10 +90,17 @@ export const QuestionEventSchema = z
 	})
 	.describe("Event emitted when a question is asked");
 
+/**
+ * Event emitted when a question is asked
+ *
+ * @public
+ */
 export type QuestionEvent = z.infer<typeof QuestionEventSchema>;
 
 /**
  * Event emitted when a question is answered
+ *
+ * @public
  */
 export const AnswerEventSchema = z
 	.object({
@@ -72,4 +109,9 @@ export const AnswerEventSchema = z
 	})
 	.describe("Event emitted when a question is answered");
 
+/**
+ * Event emitted when a question is answered
+ *
+ * @public
+ */
 export type AnswerEvent = z.infer<typeof AnswerEventSchema>;

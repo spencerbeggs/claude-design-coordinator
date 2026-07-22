@@ -2,6 +2,8 @@ import { z } from "zod";
 
 /**
  * Schema for a logged decision
+ *
+ * @public
  */
 export const DecisionSchema = z
 	.object({
@@ -13,10 +15,17 @@ export const DecisionSchema = z
 	})
 	.describe("A logged decision");
 
+/**
+ * A logged decision
+ *
+ * @public
+ */
 export type Decision = z.infer<typeof DecisionSchema>;
 
 /**
  * Input schema for logging a decision
+ *
+ * @public
  */
 export const LogDecisionInputSchema = z
 	.object({
@@ -25,4 +34,9 @@ export const LogDecisionInputSchema = z
 	})
 	.describe("Input for logging a decision");
 
+/**
+ * Input for logging a decision
+ *
+ * @public
+ */
 export type LogDecisionInput = z.infer<typeof LogDecisionInputSchema>;

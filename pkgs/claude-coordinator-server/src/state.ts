@@ -3,6 +3,8 @@ import type { Agent, ContextEntry, Decision, ListContextInput, Question } from "
 
 /**
  * Events emitted by the coordinator state
+ *
+ * @public
  */
 export interface CoordinatorStateEvents {
 	agentChange: [agents: Agent[]];
@@ -13,6 +15,8 @@ export interface CoordinatorStateEvents {
 
 /**
  * EventEmitter-based state manager for the coordinator
+ *
+ * @public
  */
 export class CoordinatorState extends EventEmitter<CoordinatorStateEvents> {
 	private sessionId: string;
@@ -129,6 +133,11 @@ export class CoordinatorState extends EventEmitter<CoordinatorStateEvents> {
  */
 let globalState: CoordinatorState | null = null;
 
+/**
+ * Gets the global coordinator state singleton, creating it if necessary.
+ *
+ * @public
+ */
 export function getOrCreateState(sessionId?: string): CoordinatorState {
 	if (!globalState) {
 		globalState = new CoordinatorState(sessionId ?? crypto.randomUUID());
@@ -150,6 +159,8 @@ export function getOrCreateState(sessionId?: string): CoordinatorState {
  *   resetState();
  * });
  * ```
+ *
+ * @public
  */
 export function resetState(): void {
 	globalState = null;
