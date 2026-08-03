@@ -1,5 +1,17 @@
 # @spencerbeggs/claude-coordinator-mcp
 
+## 0.1.3
+
+### Dependencies
+
+* | Dependency                | Type       | Action  | From    | To      |                                                                          |
+  | ------------------------- | ---------- | ------- | ------- | ------- | ------------------------------------------------------------------------ |
+  | @modelcontextprotocol/sdk | dependency | updated | ^1.29.0 | ^1.30.0 | [#67][#67] Thanks [@spencerbeggs](https://github.com/apps/spencerbeggs)! |
+
+### Patch Changes
+
+[#67]: https://github.com/spencerbeggs/claude-design-coordinator/pull/67
+
 ## 0.1.2
 
 ### Dependencies
