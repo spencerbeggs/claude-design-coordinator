@@ -1,5 +1,17 @@
 # @spencerbeggs/claude-coordinator-server
 
+## 0.1.3
+
+### Dependencies
+
+* | Dependency | Type       | Action  | From    | To      |                                                                          |
+  | ---------- | ---------- | ------- | ------- | ------- | ------------------------------------------------------------------------ |
+  | ws         | dependency | updated | ^8.21.1 | ^8.21.3 | [#70][#70] Thanks [@spencerbeggs](https://github.com/apps/spencerbeggs)! |
+
+### Patch Changes
+
+[#70]: https://github.com/spencerbeggs/claude-design-coordinator/pull/70
+
 ## 0.1.2
 
 ### Dependencies
