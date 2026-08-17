@@ -34,16 +34,13 @@ settings:
   excludeLinksFromLockfile: false
 
 catalogs:
-  silk:
+  build:
     '@types/node':
       specifier: ^26.1.2
       version: 26.2.0
     typescript:
       specifier: ^7.0.2
       version: 7.0.2
-    vitest:
-      specifier: ^4.1.10
-      version: 4.1.10
 
 overrides:
   '@microsoft/api-extractor>typescript': ^6.0.3
@@ -71,14 +68,11 @@ importers:
         specifier: ^2.1.12
         version: 2.1.12(@effected/jsonc@0.6.0(effect@4.0.0-beta.107))(@effected/semver@0.4.0(effect@4.0.0-beta.107))(@effected/walker@0.4.0(@effected/glob@0.3.0(effect@4.0.0-beta.107))(effect@4.0.0-beta.107))(@types/node@26.2.0)(ioredis@5.11.1(supports-color@8.1.1))(react@19.2.8)(tsx@4.23.12)(typescript@7.0.2)
       '@types/node':
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 26.2.0
       typescript:
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 7.0.2
-      vitest:
-        specifier: catalog:silk
-        version: 4.1.10(@types/node@26.2.0)(@vitest/coverage-istanbul@4.1.10)(@vitest/coverage-v8@4.1.10)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.12)(yaml@2.9.0))
     publishDirectory: dist/dev/pkg
 
   pkgs/claude-coordinator-mcp:
@@ -109,17 +103,14 @@ importers:
         specifier: ^2.1.12
         version: 2.1.12(@effected/jsonc@0.6.0(effect@4.0.0-beta.107))(@effected/semver@0.4.0(effect@4.0.0-beta.107))(@effected/walker@0.4.0(@effected/glob@0.3.0(effect@4.0.0-beta.107))(effect@4.0.0-beta.107))(@types/node@26.2.0)(ioredis@5.11.1(supports-color@8.1.1))(react@19.2.8)(tsx@4.23.12)(typescript@7.0.2)
       '@types/node':
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 26.2.0
       '@types/ws':
         specifier: ^8.18.1
         version: 8.18.1
       typescript:
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 7.0.2
-      vitest:
-        specifier: catalog:silk
-        version: 4.1.10(@types/node@26.2.0)(@vitest/coverage-istanbul@4.1.10)(@vitest/coverage-v8@4.1.10)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.12)(yaml@2.9.0))
     publishDirectory: dist/dev/pkg
 
   pkgs/claude-coordinator-server:
@@ -141,17 +132,14 @@ importers:
         specifier: ^2.1.12
         version: 2.1.12(@effected/jsonc@0.6.0(effect@4.0.0-beta.107))(@effected/semver@0.4.0(effect@4.0.0-beta.107))(@effected/walker@0.4.0(@effected/glob@0.3.0(effect@4.0.0-beta.107))(effect@4.0.0-beta.107))(@types/node@26.2.0)(ioredis@5.11.1(supports-color@8.1.1))(react@19.2.8)(tsx@4.23.12)(typescript@7.0.2)
       '@types/node':
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 26.2.0
       '@types/ws':
         specifier: ^8.18.1
         version: 8.18.1
       typescript:
-        specifier: catalog:silk
+        specifier: catalog:build
         version: 7.0.2
-      vitest:
-        specifier: catalog:silk
-        version: 4.1.10(@types/node@26.2.0)(@vitest/coverage-istanbul@4.1.10)(@vitest/coverage-v8@4.1.10)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.12)(yaml@2.9.0))
     publishDirectory: dist/dev/pkg
 
 packages:
