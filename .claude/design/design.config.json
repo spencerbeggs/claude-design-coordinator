@@ -1,51 +1,107 @@
 {
 	"$schema": "../skills/design-config/json-schemas/current.json",
-	"version": "1.0.0",
-	"project": {
-		"name": "spencerbeggs/claude-design-coordinator",
-		"type": "monorepo",
-		"repository": "https://github.com/spencerbeggs/claude-design-coordinator",
-		"maintainer": "C. Spencer Beggs"
-	},
-	"paths": {
-		"designDocs": ".claude/design",
-		"plans": ".claude/plans",
-		"skills": ".claude/skills",
-		"context": "CLAUDE.md",
-		"localContext": "CLAUDE.local.md"
+	"integration": {
+		"ci": {
+			"enabled": false,
+			"syncOnMerge": false,
+			"validateOnPR": false
+		},
+		"git": {
+			"requireReviewForChanges": false,
+			"trackDesignDocs": true
+		},
+		"plans": {
+			"autoSyncProgress": false,
+			"bidirectionalLinking": true,
+			"cacheMetadata": true,
+			"cacheTTL": 300,
+			"enabled": true,
+			"validateOnCommit": true
+		}
 	},
 	"modules": {
 		"claude-coordinator-core": {
-			"path": "pkgs/claude-coordinator-core",
-			"designDocsPath": ".claude/design/claude-coordinator-core",
 			"categories": ["architecture", "integration"],
+			"designDocsPath": ".claude/design/claude-coordinator-core",
 			"maintainer": "C. Spencer Beggs",
+			"path": "pkgs/claude-coordinator-core",
 			"userDocs": {
 				"readme": "pkgs/claude-coordinator-core/README.md",
 				"repoDocs": null,
 				"siteDocs": null
 			}
 		},
-		"claude-coordinator-server": {
-			"path": "pkgs/claude-coordinator-server",
-			"designDocsPath": ".claude/design/claude-coordinator-server",
-			"categories": ["architecture", "integration", "observability"],
+		"claude-coordinator-mcp": {
+			"categories": ["architecture", "integration"],
+			"designDocsPath": ".claude/design/claude-coordinator-mcp",
 			"maintainer": "C. Spencer Beggs",
+			"path": "pkgs/claude-coordinator-mcp",
+			"userDocs": {
+				"readme": "pkgs/claude-coordinator-mcp/README.md",
+				"repoDocs": null,
+				"siteDocs": null
+			}
+		},
+		"claude-coordinator-server": {
+			"categories": ["architecture", "integration", "observability"],
+			"designDocsPath": ".claude/design/claude-coordinator-server",
+			"maintainer": "C. Spencer Beggs",
+			"path": "pkgs/claude-coordinator-server",
 			"userDocs": {
 				"readme": "pkgs/claude-coordinator-server/README.md",
 				"repoDocs": null,
 				"siteDocs": null
 			}
+		}
+	},
+	"paths": {
+		"context": "CLAUDE.md",
+		"designDocs": ".claude/design",
+		"localContext": "CLAUDE.local.md",
+		"plans": ".claude/plans",
+		"skills": ".claude/skills"
+	},
+	"project": {
+		"maintainer": "C. Spencer Beggs",
+		"name": "spencerbeggs/claude-design-coordinator",
+		"repository": "https://github.com/spencerbeggs/claude-design-coordinator",
+		"type": "monorepo"
+	},
+	"quality": {
+		"context": {
+			"childMaxLines": 300,
+			"requireDesignDocPointers": true,
+			"rootMaxLines": 500
 		},
-		"claude-coordinator-mcp": {
-			"path": "pkgs/claude-coordinator-mcp",
-			"designDocsPath": ".claude/design/claude-coordinator-mcp",
-			"categories": ["architecture", "integration"],
-			"maintainer": "C. Spencer Beggs",
-			"userDocs": {
-				"readme": "pkgs/claude-coordinator-mcp/README.md",
-				"repoDocs": null,
-				"siteDocs": null
+		"designDocs": {
+			"maxLineLength": 120,
+			"minSections": ["Overview", "Current State", "Rationale"],
+			"requireFrontmatter": true,
+			"requireTOC": true
+		},
+		"plans": {
+			"archiveAfterDays": 30,
+			"maxLineLength": 120,
+			"progressRange": [0, 100],
+			"requiredFields": ["name", "title", "created", "status", "progress"],
+			"requireFrontmatter": true,
+			"stalenessThresholdDays": 30,
+			"validStatuses": ["ready", "in-progress", "blocked", "completed", "abandoned"]
+		},
+		"userDocs": {
+			"level1": {
+				"maxLineLength": 80,
+				"requireSections": ["Features", "Installation", "Usage"],
+				"targetWordCount": [200, 500]
+			},
+			"level2": {
+				"maxLineLength": 120,
+				"requireNavigation": true
+			},
+			"level3": {
+				"framework": "rspress",
+				"requireCodeExamples": true,
+				"requireMetadata": true
 			}
 		}
 	},
@@ -69,61 +125,5 @@
 			"plan-complete"
 		]
 	},
-	"quality": {
-		"designDocs": {
-			"maxLineLength": 120,
-			"requireFrontmatter": true,
-			"requireTOC": true,
-			"minSections": ["Overview", "Current State", "Rationale"]
-		},
-		"userDocs": {
-			"level1": {
-				"targetWordCount": [200, 500],
-				"maxLineLength": 80,
-				"requireSections": ["Features", "Installation", "Usage"]
-			},
-			"level2": {
-				"maxLineLength": 120,
-				"requireNavigation": true
-			},
-			"level3": {
-				"framework": "rspress",
-				"requireMetadata": true,
-				"requireCodeExamples": true
-			}
-		},
-		"context": {
-			"rootMaxLines": 500,
-			"childMaxLines": 300,
-			"requireDesignDocPointers": true
-		},
-		"plans": {
-			"maxLineLength": 120,
-			"requireFrontmatter": true,
-			"requiredFields": ["name", "title", "created", "status", "progress"],
-			"validStatuses": ["ready", "in-progress", "blocked", "completed", "abandoned"],
-			"progressRange": [0, 100],
-			"stalenessThresholdDays": 30,
-			"archiveAfterDays": 30
-		}
-	},
-	"integration": {
-		"ci": {
-			"enabled": false,
-			"validateOnPR": false,
-			"syncOnMerge": false
-		},
-		"git": {
-			"trackDesignDocs": true,
-			"requireReviewForChanges": false
-		},
-		"plans": {
-			"enabled": true,
-			"bidirectionalLinking": true,
-			"autoSyncProgress": false,
-			"validateOnCommit": true,
-			"cacheMetadata": true,
-			"cacheTTL": 300
-		}
-	}
+	"version": "1.0.0"
 }
