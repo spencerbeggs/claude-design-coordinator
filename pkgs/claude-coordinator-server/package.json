@@ -35,7 +35,7 @@
 		"zod": "^4.5.4"
 	},
 	"devDependencies": {
-		"@savvy-web/bundler": "^2.2.0",
+		"@savvy-web/bundler": "^2.2.1",
 		"@types/node": "catalog:build",
 		"@types/ws": "^8.18.1",
 		"typescript": "catalog:build"
