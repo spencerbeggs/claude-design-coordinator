@@ -1,5 +1,10 @@
 # @spencerbeggs/claude-coordinator-server
 
+> **This package is deprecated and no longer maintained.**
+> Claude Code added [native support for cross-session messageing](https://code.claude.com/docs/en/cross-session-messaging) between agents in v2.1.224.
+> This project was a fun experiment. Thank you to everyone who tried it out and provided feedback.
+> No further releases, fixes or security patches will be published here.
+
 tRPC WebSocket server enabling real-time coordination between Claude Code
 instances through session management, context sharing, Q&A, and decision
 logging.

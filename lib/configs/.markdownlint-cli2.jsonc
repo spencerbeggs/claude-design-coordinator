@@ -90,6 +90,7 @@
 		"**/.git",
 		"**/__test__/**/fixtures/**",
 		"**/__fixtures__/**",
+		"**/README.md",
 		"**/.repos"
 	],
 	"noBanner": true

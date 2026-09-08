@@ -1,3 +1,9 @@
+> [!CAUTION]
+> **This project is deprecated and no longer maintained.**
+> Claude Code added [native support for cross-session messageing](https://code.claude.com/docs/en/cross-session-messaging) between agents in v2.1.224.
+> This project was a fun experiment. Thank you to everyone who tried it out and provided feedback.
+> No further releases, fixes or security patches will be published here.
+
 # Claude Design Coordinator
 
 A coordination system that enables multiple Claude Code instances to communicate
